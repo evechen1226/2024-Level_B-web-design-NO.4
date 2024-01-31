@@ -163,7 +163,7 @@ function to($url)
 $Poster = new DB('poster');
 $Movie = new DB('movie');
 $Admin= new DB('admin');
-$News = new DB('news');
+$Type = new DB('type');
 $Log = new DB('log');
 
 
