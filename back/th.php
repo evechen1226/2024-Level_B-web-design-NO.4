@@ -42,6 +42,16 @@
 <script>
     getTypes(0)
 
+    function edit(dom,id) {
+        let name=prompt("請輸入你要修改的分類名稱：",`${$(dom).parent().prev().text()}`)
+        if(name!=null){
+            $.post("./api/save_type.php",{name,id},()=>{
+                // location.reload()
+                $(dom).parent().prev().text(name)
+            })
+        }
+      }
+
     function getTypes(big_id) {
         $.get('./api/get_types.php', {
             big_id
