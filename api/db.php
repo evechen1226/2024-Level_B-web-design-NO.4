@@ -162,7 +162,7 @@ function to($url)
 
 $Poster = new DB('poster');
 $Movie = new DB('movie');
-$Que= new DB('ques');
+$Admin= new DB('admin');
 $News = new DB('news');
 $Log = new DB('log');
 

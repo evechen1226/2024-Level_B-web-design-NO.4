@@ -1,6 +1,7 @@
 <h2 class="ct">
     新增管理帳號
 </h2>
+<form action="./api/save_admin.php" method="post">
 <table class="all">
     <tr>
         <td class="tt ct">帳號</td>
@@ -31,9 +32,14 @@
             </div>
             <div>
                 <input type="checkbox" name="pr[]" value="5">
-                最新消息管
+                最新消息管理
             </div>
 
         </td>
     </tr>
 </table>
+<div class="ct">
+    <input type="submit" value="送出">
+    <input type="reset" value="重置">
+</div>
+</form>
