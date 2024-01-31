@@ -34,9 +34,11 @@
 </div>
 
 <script>
-    function del(table,id){
-        $.post("./api/del.php",{table,id},()=>{
-            location.reload()
-        })
-    }
+    // 將下列程式移至js/js.js中，因其它頁面也會使用
+    // --------------------------------------------
+    // function del(table,id){
+    //     $.post("./api/del.php",{table,id},()=>{
+    //         location.reload()
+    //     })
+    // }
 </script>
