@@ -10,30 +10,45 @@
     <button onclick="addType('mid')">新增</button>
 </div>
 <table class="all">
-    <tr class="tt">
-        <td>流行皮件</td>
-        <td class="ct">
-            <button>修改</button>
-            <button>刪除</button>
-        </td>
-    </tr>
-    <tr class="pp ct">
-        <td>女用皮件</td>
-        <td>
-            <button>修改</button>
-            <button>刪除</button>
-        </td>
-    </tr>
+    <?php
+    $bigs = $Type->all(['big_id' => 0]);
+    foreach ($bigs as $big) {
+    ?>
+        <tr class="tt">
+            <td><?= $big['name']; ?></td>
+            <td class="ct">
+                <button onclick="edit(this,<?= $big['id']; ?>)">修改</button>
+                <button onclick="del('type',<?= $big['id']; ?>)">刪除</button>
+            </td>
+        </tr>
+        <?php
+        $mids = $Type->all(['big_id' => $big['id']]);
+        foreach ($mids as $mid) {
+        ?>
+            <tr class="pp ct">
+                <td><?= $mid['name']; ?></td>
+                <td>
+                    <button onclick="edit(this,<?= $mid['id']; ?>)">修改</button>
+                    <button onclick="del('type',<?= $mid['id']; ?>)">>刪除</button>
+                </td>
+            </tr>
+    <?php
+        }
+    }
+    ?>
+
 </table>
 
 <script>
     getTypes(0)
 
-    function getTypes(big_id) { 
-        $.get('./api/get_types.php',{big_id},(types)=>{
+    function getTypes(big_id) {
+        $.get('./api/get_types.php', {
+            big_id
+        }, (types) => {
             $('#bigs').html(types)
         })
-     }
+    }
 
     function addType(type) {
         let name
@@ -50,7 +65,10 @@
                 break;
         }
 
-        $.post('./api/sasve_type.php', {name, big_id}, () => {
+        $.post('./api/sasve_type.php', {
+            name,
+            big_id
+        }, () => {
             location.reload()
         })
     }
