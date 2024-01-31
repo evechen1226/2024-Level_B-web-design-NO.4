@@ -1,15 +1,20 @@
 <h2 class="ct">
-    新增管理帳號
+    編輯管理帳號
 </h2>
+<?php
+$row=$Admin->find($_GET['id']);
+$pr=unserialize($row['pr']);
+?>
+
 <form action="./api/save_admin.php" method="post">
 <table class="all">
     <tr>
         <td class="tt ct">帳號</td>
-        <td class="pp"><input type="text" name="acc" id="acc"></td>
+        <td class="pp"><input type="text" name="acc" value="<?=$row['acc']?>"></td>
     </tr>
     <tr>
         <td class="tt ct">密碼</td>
-        <td class="pp"><input type="password" name="pw" id="pw"></td>
+        <td class="pp"><input type="password" name="pw"value="<?=$row['pw']?>"></td>
     </tr>
     <tr>
         <td class="tt ct">權限</td>
@@ -39,7 +44,8 @@
     </tr>
 </table>
 <div class="ct">
-    <input type="submit" value="送出">
+    <input type="hidden" name="id" value="<?=$row=['id'];?>">
+    <input type="submit" value="修改">
     <input type="reset" value="重置">
 </div>
 </form>
