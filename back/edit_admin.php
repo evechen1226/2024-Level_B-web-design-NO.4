@@ -20,23 +20,23 @@ $pr=unserialize($row['pr']);
         <td class="tt ct">權限</td>
         <td class="pp">
             <div>
-                <input type="checkbox" name="pr[]" vlaue="1">
+                <input type="checkbox" name="pr[]" vlaue="1" <?=(in_array(1,$pr))?'checked':'';?>>
                 商類分類管理
             </div>
             <div>
-                <input type="checkbox" name="pr[]" value="2">
+                <input type="checkbox" name="pr[]" value="2" <?=(in_array(2,$pr))?'checked':'';?>>
                 訂單管理
             </div>
             <div>
-                <input type="checkbox" name="pr[]" value="3">
+                <input type="checkbox" name="pr[]" value="3" <?=(in_array(3,$pr))?'checked':'';?>>
                 會員管理
             </div>
             <div>
-                <input type="checkbox" name="pr[]" value="4">
+                <input type="checkbox" name="pr[]" value="4" <?=(in_array(4,$pr))?'checked':'';?>>
                 頁尾版權區管理
             </div>
             <div>
-                <input type="checkbox" name="pr[]" value="5">
+                <input type="checkbox" name="pr[]" value="5" <?=(in_array(5,$pr))?'checked':'';?>>
                 最新消息管理
             </div>
 
