@@ -51,3 +51,46 @@
         <input type="button" value="">
     </div>
 </form>
+<script>
+    // 會造成無窮事件↓
+    // getTypes(0)
+    // function getTypes(big_id) {
+    //     $.get('./api/get_types.php', {
+    //         big_id
+    //     }, (types) => {
+
+    //         if (parseInt(big_id) == 0) {
+    //             $('#bigs').html(types)
+    //         } else {
+    //             $('#mid').html(types)
+    //             getTypes($('#big').val())
+    //         }
+    //     })
+    // }
+
+    getTypes('big', 0)
+
+    $('#big').on("change",function () {
+        getTypes('mid',$('#big').val())
+        
+    })
+
+    function getTypes(big_id) {
+        $.get('./api/get_types.php', {
+            big_id
+        }, (types) => {
+            switch (types) {
+                case 'big':
+                    $("#big").html(types)
+                    getTypes('mid', $('#big').val())
+                    break;
+                case 'mid':
+                    $("#mid").html(types)
+                    break;
+                default:
+                    break;
+            }
+
+        })
+    }
+</script>
