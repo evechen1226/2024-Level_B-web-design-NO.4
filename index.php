@@ -1,3 +1,4 @@
+<?php include_once "./api/db.php" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0039) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,6 +9,7 @@
         <title>┌精品電子商務網站」</title>
         <link href="./css/css.css" rel="stylesheet" type="text/css">
         <script src="./js/js.js"></script>
+        <script src="./js/jquery-1.9.1.min.js"></script>
 </head>
 
 <body>
@@ -18,7 +20,7 @@
                                 <img src="./icon/0416.jpg">
                         </a>
                         <div style="padding:10px;">
-                                <a href="?">回首頁</a> |
+                                <a href="index.php">回首頁</a> |
                                 <a href="?do=news">最新消息</a> |
                                 <a href="?do=look">購物流程</a> |
                                 <a href="?do=buycart">購物車</a> |
@@ -46,7 +48,7 @@
 
                                 <a href="?do=admin">管理登入</a>
                         </div>
-                        情人節特惠活動 &nbsp; 為了慶祝七夕情人節，將舉辦情人兩人到現場有七七折之特惠活動~
+                        <marquee behavior="" direction="">年終特賣會開跑了 &nbsp; &nbsp; 情人節特惠活動</marquee>
                 </div>
                 <div id="left" class="ct">
                         <div style="min-height:400px;">
@@ -58,6 +60,13 @@
                         </span>
                 </div>
                 <div id="right">
+                      <?php 
+                      if(isset($_GET['do'])){
+                        include "./front/{$_GET['do']}.php";
+                      }else{
+                        include "./front/main.php";
+                      }
+                      ?>
                 </div>
                 <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
                         頁尾版權 : </div>
