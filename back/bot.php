@@ -1,10 +1,15 @@
 <h2 class="ct">編輯頁尾版權區</h2>
+<?php 
+if(!empty($_POST)){
+    $Bottom->save(['bottom'=>$_POST['bottom'],'id'=>1]);
+}
+?>
 <form action="?do=bot" method="post">
-    <table>
+    <table class="all">
         <tr>
             <td class="tt">頁尾宣告內容</td>
-            <td class="po">
-                <input type="text" name="bot" value="<?php $Bottom->find(1)['bottom'];?>">
+            <td class="pp">
+                <input type="text" name="bottom" value="<?= $Bottom->find(1)['bottom'];?>">
             </td>
         </tr>
     </table>

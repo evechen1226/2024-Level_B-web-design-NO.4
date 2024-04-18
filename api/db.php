@@ -160,11 +160,12 @@ function to($url)
     header("location:$url");
 }
 
-$Poster = new DB('poster');
-$Movie = new DB('movie');
 $Admin= new DB('admin');
+$Bottom = new DB('bottom');
+$Goods = new DB('goods');
+$Mem = new DB('mem');
+$Orders = new DB('orders');
 $Type = new DB('type');
-$Log = new DB('log');
 
 
 // // 進站人數檢查
