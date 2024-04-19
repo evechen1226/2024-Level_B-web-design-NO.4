@@ -1,5 +1,5 @@
 <h1>第一次購買</h1>
-<img src="../img/0413.jpg" alt="location.href='?do=reg'">
+<img src="../img/0413.jpg" onclick="location.href='?do=reg'">
 <h1>會員登入</h1>
 <table>
   <tr>
