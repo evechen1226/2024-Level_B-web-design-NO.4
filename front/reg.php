@@ -1,4 +1,4 @@
-<h2 class="ct">會員註冊</h2>
+﻿<h2 class="ct">會員註冊</h2>
 
 <table class="all">
   <tr>
@@ -84,8 +84,10 @@
         alert(`此帳號${user.acc}已被使用過`)
       } else {
         // console.log("2")
-        $.post("./api/reg.php",{user},(res)=>{
-          
+        $.post("./api/reg.php", {
+          user
+        }, (res) => {
+          alert(`歡迎${user.acc}，已註冊成功`)
         })
       }
     })

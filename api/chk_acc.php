@@ -6,6 +6,6 @@ if(is_array($_GET)){
   $acc=$_GET['acc'];
 }
 
-if($Admin->count(['acc'=>$acc])>0){
+if($Mem->count(['acc'=>$acc])>0){
   echo 1 ;
 }
