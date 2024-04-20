@@ -1,9 +1,4 @@
 <h2 class="ct">會員註冊</h2>
-<style>
-  .bg {
-    border: 3px solid lightpink;
-  }
-</style>
 
 <table class="all">
   <tr>
@@ -12,7 +7,7 @@
   </tr>
   <tr>
     <td class="tt">帳號</td>
-    <td class="pp"><input class="bg" type="text" name="acc" id="acc"><button onclick="chkacc()">檢測帳號</button></td>
+    <td class="pp"><input type="text" name="acc" id="acc"><button onclick="chkacc()">檢測帳號</button></td>
   </tr>
   <tr>
     <td class="tt">密碼</td>
@@ -35,22 +30,65 @@
 <div class="ct">
   <button onclick="reg()">註冊</button>
   <button onclick="clearn()">重置</button>
+  <button onclick="test()">test</button>
 </div>
 
 <script>
+  function test() {
+    let name = $("#name").val("abc11")
+    let acc = $("#acc").val("11")
+    let pw = $("#pw").val("11")
+    let tel = $("#tel").val("11")
+    let addr = $("#addr").val("11")
+    let email = $("#email").val("11")
+  }
+  regres = 0;
+
   function chkacc() {
     let acc = $("#acc").val()
 
     $.get("./api/chk_acc.php", {
       acc
     }, (res) => {
-      console.log(res)
+      // console.log("chkcc" + res)
       if (parseInt(res) == 1 || acc == "admin") {
         alert(`此帳號${acc}已被使用過`)
-        // $("#acc").addClass("bg")
+
       } else {
         alert(`此帳號${acc}可以使用`)
       }
     })
+  }
+
+  function reg() {
+    // let name = $("#name").val()
+    // let acc = $("#acc").val()
+    // let pw = $("#pw").val()
+    // let tel = $("#tel").val()
+    // let addr = $("#addr").val()
+    // let email = $("#email").val()
+
+    let user = {
+      name: $("#name").val(),
+      acc: $("#acc").val(),
+      pw: $("#pw").val(),
+      tel: $("#tel").val(),
+      addr: $("#addr").val(),
+      email: $("#email").val(),
+    }
+
+    $.get("./api/chk_acc.php", {
+      user
+    }, (res) => {
+      if (parseInt(res) == 1 || acc == "admin") {
+        alert(`此帳號${user.acc}已被使用過`)
+      } else {
+        // console.log("2")
+        $.post("./api/reg.php",{user},(res)=>{
+          
+        })
+      }
+    })
+
   }
 </script>
