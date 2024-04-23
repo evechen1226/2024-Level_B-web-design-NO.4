@@ -1,6 +1,7 @@
 <?php  include_once "db.php";
 $table=$_POST['table'];
-unset($_POST['ans']);
+unset($_POST['table']);
+
 $db=new DB($table);
 
 $chk=$db->count($_POST);

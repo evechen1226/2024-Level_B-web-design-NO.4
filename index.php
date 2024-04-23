@@ -25,9 +25,9 @@
                                 <a href="?do=look">購物流程</a> |
                                 <a href="?do=buycart">購物車</a> |
                                 <?php
-                                if (isset($_SESSION['user'])) {
+                                if (isset($_SESSION['mem'])) {
                                 ?>
-                                        <a href="./api/loginout">會員登出</a> |
+                                        <a href="./api/logout.php?do=mem">會員登出</a> |
                                 <?php
                                 } else { ?>
                                         <a href="?do=login">會員登入</a> |
@@ -38,7 +38,7 @@
                                 <?php
                                 if (isset($_SESSION['admin'])) {
                                 ?>
-                                        <a href="?back.php">返回管理</a> |
+                                        <a href="back.php">返回管理</a> |
                                 <?php
                                 } else { ?>
                                         <a href="?do=admin">管理登入</a> |
@@ -58,13 +58,16 @@
                         </span>
                 </div>
                 <div id="right">
-                      <?php 
-                      if(isset($_GET['do'])){
-                        include "./front/{$_GET['do']}.php";
-                      }else{
-                        include "./front/main.php";
-                      }
-                      ?>
+                        <?php
+                        if (isset($_GET['do'])) {
+                                include "./front/{$_GET['do']}.php";
+                        } else {
+                                include "./front/main.php";
+                        }
+                        ?>
+
+                        <a href="./api/session.php" target="_blank"><button>session</button></a>
+
                 </div>
                 <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
                         頁尾版權 : <?php echo $Bottom->find(1)['bottom']; ?></div>

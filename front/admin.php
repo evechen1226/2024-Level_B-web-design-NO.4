@@ -17,7 +17,10 @@
       $_SESSION['ans'] = $a + $b;
       echo " {$a} + {$b} = ";
       ?>
-      <input type="text" name="ans" id="ans">
+      <input type="text" name="ans" id="ans" value="
+      <?php
+      echo $_SESSION['ans'];
+      ?>">
     </td>
   </tr>
 </table>
@@ -25,8 +28,13 @@
 <div class="ct">
   <button onclick="login('admin')">確認</button>
 </div>
-
+<button onclick="test()"> test </button>
 <script>
+  function test() {
+    let acc = $("#acc").val("admin")
+    let pw = $("#pw").val("1234")
+  }
+
   function login(table) {
     $.get("./api/chk_ans.php", {
       ans: $("#ans").val()
