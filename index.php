@@ -25,7 +25,7 @@
                                 <a href="?do=look">購物流程</a> |
                                 <a href="?do=buycart">購物車</a> |
                                 <?php
-                                if (isset($_SESSION['mem'])) {
+                                if (isset($_SESSION['user'])) {
                                 ?>
                                         <a href="./api/loginout">會員登出</a> |
                                 <?php
@@ -45,8 +45,6 @@
                                 <?php
                                 }
                                 ?>
-
-                                <a href="?do=admin">管理登入</a>
                         </div>
                         <marquee behavior="" direction="">年終特賣會開跑了 &nbsp; &nbsp; 情人節特惠活動</marquee>
                 </div>
