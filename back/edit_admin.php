@@ -14,7 +14,7 @@ $pr=unserialize($row['pr']);
     </tr>
     <tr>
         <td class="tt ct">密碼</td>
-        <td class="pp"><input type="password" name="pw"value="<?=$row['pw']?>"></td>
+        <td class="pp"><input type="password" name="pw" value="<?=$row['pw']?>"></td>
     </tr>
     <tr>
         <td class="tt ct">權限</td>
@@ -44,7 +44,7 @@ $pr=unserialize($row['pr']);
     </tr>
 </table>
 <div class="ct">
-    <input type="hidden" name="id" value="<?=$row=['id'];?>">
+    <input type="hidden" name="id" value="<?=$row['id'];?>">
     <input type="submit" value="修改">
     <input type="reset" value="重置">
 </div>
