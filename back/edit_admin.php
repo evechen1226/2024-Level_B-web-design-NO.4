@@ -20,7 +20,7 @@ $pr=unserialize($row['pr']);
         <td class="tt ct">權限</td>
         <td class="pp">
             <div>
-                <input type="checkbox" name="pr[]" vlaue="1" <?=(in_array(1,$pr))?'checked':'';?>>
+                <input type="checkbox" name="pr[]" value="1" <?=(in_array(1,$pr))?'checked':'';?>>
                 商類分類管理
             </div>
             <div>
