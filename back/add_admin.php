@@ -15,7 +15,7 @@
         <td class="tt ct">權限</td>
         <td class="pp">
             <div>
-                <input type="checkbox" name="pr[]" vlaue="1">
+                <input type="checkbox" name="pr[]" value="1">
                 商類分類管理
             </div>
             <div>
