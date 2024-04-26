@@ -2,8 +2,8 @@
 <table class="all">
     <tr>
         <td class="tt ct">姓名</td>
-        <td class="tt ct">帳號</td>
-        <td class="tt ct">密碼</td>
+        <td class="tt ct">會員帳號</td>
+        <td class="tt ct">註冊日期</td>
         <td class="tt ct">管理</td>
     </tr>
     <?php
