@@ -12,7 +12,7 @@
     ?>
     <tr>
         <td class="pp ct"><?=$row['name']?></td>
-        <td class="pp ct"><?=$row['add']?></td>
+        <td class="pp ct"><?=$row['acc']?></td>
         <td class="pp ct"><?=$row['regdate']?></td>
         <td class="pp ct">
             <?php
