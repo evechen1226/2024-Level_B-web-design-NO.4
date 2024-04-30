@@ -1,14 +1,14 @@
 <h2 class="ct">商品分類</h2>
 <div class="ct">
     <label for="">新增大分類</label>
-    <input type="text" name="big" id="big">
+    <input type="text" name="big" id="big" onkeypress="enterKeyPress(event,'big')">
     <button onclick="addType('big')">新增</button>
 </div>
 <div class="ct">
     <label for="">新增中分類</label>
     <select name="bigs" id="bigs"></select>
     <input type="text" name="mid" id="mid">
-    <button onclick="addType('mid')">新增</button>
+    <button onclick="addType('mid')" onkeypress="enterKeyPress(event,'mid')">新增</button>
 </div>
 <table class="all">
     <?php
@@ -43,15 +43,25 @@
 <script>
     getTypes(0) //big_id=0
 
-    function edit(dom,id) {
-        let name=prompt("請輸入你要修改的分類名稱：",`${$(dom).parent().prev().text()}`)
-        if(name!=null){
-            $.post("./api/save_type.php",{name,id},()=>{
+    function edit(dom, id) {
+        let name = prompt("請輸入你要修改的分類名稱：", `${$(dom).parent().prev().text()}`)
+        if (name != null) {
+            $.post("./api/save_type.php", {
+                name,
+                id
+            }, () => {
                 // location.reload()
                 $(dom).parent().prev().text(name)
             })
         }
-      }
+    }
+
+    function enterKeyPress(event, type) {
+        if (event.key === 13) {
+            console.log('ok')
+            // addType(type)
+        }
+    }
 
     function getTypes(big_id) {
         $.get('./api/get_types.php', {
