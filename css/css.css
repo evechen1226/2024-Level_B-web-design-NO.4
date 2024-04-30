@@ -44,7 +44,7 @@ body
 	display:inline-block;
 	width:65%;
 	padding:2%;
-	min-height:550px;
+	height:550px;
 	border:#000 1px solid;
 	/* 超出版面出現滾軸 */
 	overflow: auto;
