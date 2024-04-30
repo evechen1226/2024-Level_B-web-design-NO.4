@@ -7,8 +7,8 @@
 <div class="ct">
     <label for="">新增中分類</label>
     <select name="bigs" id="bigs"></select>
-    <input type="text" name="mid" id="mid">
-    <button onclick="addType('mid')" onkeypress="enterKeyPress(event,'mid')">新增</button>
+    <input type="text" name="mid" id="mid" onkeypress="enterKeyPress(event,'mid')">
+    <button onclick="addType('mid')">新增</button>
 </div>
 <table class="all">
     <?php
@@ -58,8 +58,8 @@
 
     function enterKeyPress(event, type) {
         if (event.key == 'Enter') {
-        // alert(event.code)
-        addType(type)
+            // alert(event.code)
+            addType(type)
         }
     }
 
