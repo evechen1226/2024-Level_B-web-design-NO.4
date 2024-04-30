@@ -57,9 +57,9 @@
     }
 
     function enterKeyPress(event, type) {
-        if (event.key === 13) {
-            console.log('ok')
-            // addType(type)
+        if (event.key == 'Enter') {
+        // alert(event.code)
+        addType(type)
         }
     }
 
