@@ -8,7 +8,9 @@
         </tr>
         <tr>
             <th class="tt ct">所屬中分類</th>
-            <select name="mid" id="mid"></select>
+            <td class="pp">
+                <select name="mid" id="mid"></select>
+            </td>
         </tr>
         <tr>
             <th class="tt ct">商品編號</th>
@@ -70,16 +72,16 @@
 
     getTypes('big', 0)
 
-    $('#big').on("change",function () {
-        getTypes('mid',$('#big').val())
-        
+    $('#big').on("change", function() {
+        getTypes('mid', $('#big').val())
+
     })
 
-    function getTypes(big_id) {
+    function getTypes(type, big_id) {
         $.get('./api/get_types.php', {
             big_id
         }, (types) => {
-            switch (types) {
+            switch (type) {
                 case 'big':
                     $("#big").html(types)
                     getTypes('mid', $('#big').val())
