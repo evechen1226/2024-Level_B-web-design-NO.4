@@ -48,9 +48,9 @@
         </tr>
     </table>
     <div class="ct">
-        <input type="submit" value="">
-        <input type="reset" value="">
-        <input type="button" value="">
+        <input type="submit" value="新增">
+        <input type="reset" value="重置">
+        <input type="button" value="返回" onclick="location.href='?do=th'">
     </div>
 </form>
 <script>
