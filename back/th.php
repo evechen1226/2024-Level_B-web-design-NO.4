@@ -120,3 +120,11 @@
         </td>
     </tr>
 </table>
+
+<script>
+    function sw(id,sh){
+        $.post('./api/sw.php',{id,sh},()=>{
+            location.reload();
+        })
+    }
+</script>
