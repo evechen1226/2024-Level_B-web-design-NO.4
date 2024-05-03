@@ -107,23 +107,33 @@
         <td>狀態</td>
         <td>操作</td>
     </tr>
-    <tr class="pp">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-            <button>修改</button>
-            <button>刪除</button>
-            <button>上架</button>
-            <button>下架</button>
-        </td>
-    </tr>
+    <?php
+    $rows = $Goods->all();
+    foreach ($rows as $row) {
+    ?>
+        <tr class="pp">
+            <td><?=$row['no']?></td>
+            <td><?=$row['name']?></td>
+            <td><?=$row['stock']?></td>
+            <td><?=($row['sh'])?'販售中':'下架'?></td>
+            <td>
+                <button>修改</button>
+                <button>刪除</button>
+                <button>上架</button>
+                <button>下架</button>
+            </td>
+        </tr>
+    <?php
+    }
+    ?>
 </table>
 
 <script>
-    function sw(id,sh){
-        $.post('./api/sw.php',{id,sh},()=>{
+    function sw(id, sh) {
+        $.post('./api/sw.php', {
+            id,
+            sh
+        }, () => {
             location.reload();
         })
     }
