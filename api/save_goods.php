@@ -4,7 +4,7 @@ if(!empty($_FILES['img']['tmp_name'])){
     move_uploaded_file($_FILES['img']['tmp_name'],"../img/{$_FILES['img']['name']}");
 
 }
-$_POST['no']=rand(100000,99999);
+$_POST['no']=rand(10000,99999);
 $_POST['sh']=1;
 $Goods->save($_POST);
 to('../back.php?do=th');
