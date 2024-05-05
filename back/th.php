@@ -112,15 +112,15 @@
     foreach ($rows as $row) {
     ?>
         <tr class="pp">
-            <td><?=$row['no']?></td>
-            <td><?=$row['name']?></td>
-            <td><?=$row['stock']?></td>
-            <td><?=($row['sh'])?'販售中':'下架'?></td>
+            <td><?= $row['no'] ?></td>
+            <td><?= $row['name'] ?></td>
+            <td><?= $row['stock'] ?></td>
+            <td><?= ($row['sh']) ? '販售中' : '下架' ?></td>
             <td>
-                <button>修改</button>
-                <button>刪除</button>
-                <button>上架</button>
-                <button>下架</button>
+                <button onclick="location.href='?do=edit_goods&id=<?= $row = ['id']; ?>'">修改</button>
+                <button onclick="del('good',id=<?= $row = ['id']; ?>)">">刪除</button>
+                <button onclick="sw(<?= $row['id']; ?>,1)">上架</button>
+                <button onclick="sw(<?= $row['id']; ?>,0)">下架</button>
             </td>
         </tr>
     <?php
