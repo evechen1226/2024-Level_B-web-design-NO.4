@@ -50,6 +50,7 @@
                 </div>
                 <div id="left" class="ct">
                         <div style="min-height:400px;">
+                        <a href="?type=0">全部商品(<?=$Good->count(['sh'=>1])?>)</a>
                         </div>
                         <span>
                                 <div>進站總人數</div>
