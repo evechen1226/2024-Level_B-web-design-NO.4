@@ -50,20 +50,37 @@
                 </div>
                 <div id="left" class="ct">
                         <div style="min-height:400px;">
-                        <a href="?type=0">全部商品(<?=$Good->count(['sh'=>1])?>)</a>
+                                <div class="ww">
+                                        <a href="?type=0">全部商品(<?= $Goods->count(['sh' => 1]) ?>)</a>
+                                </div>
+
+                                <?php
+                                //取得大分類
+                                $bigs = $Type->all(['big_id' => 0]);
+                                //使用迴圈列出所有大分類
+                                foreach ($bigs as $big) {
+                                        echo "<div class='ww'>";
+                                        echo "<a herf='{$big['id']}'>";
+                                        echo $big['name'];
+                                        echo "({$Goods->count(['big' =>$big['id'], 'sh' => 1])})";
+                                        echo "</a>";
+                                        //判斷此一大分類下是否有中分類
+                                        if ($Type->count(['big_id' => $big['id']]) > 0) {
+                                                $mids = $Type->all(['big_id' => $big['id']]);
+                                                foreach ($mids as $mid) {
+                                                        echo "<div class='s'>";
+                                                        echo "<a herf='?type={$mid['id']}'>";
+                                                        echo $mid['name'];
+                                                        echo "({$Goods->count(['mid' =>$mid['id'], 'sh' => 1])})";
+
+                                                        echo "</a>";
+                                                        echo "</div>";
+                                                };
+                                        };
+                                        echo "</div>";
+                                }
+                                ?>
                         </div>
-                        <?php
-                        //取得大分類
-                        $bigs=$Type->all(['big_id'=>0]);
-                        //使用迴圈列出所有大分類
-                        foreach($bigs as $big){
-                                echo "<div class='v'>";
-                                echo "<a herf='{$type['id']}";
-                                echo $big['name'];
-                                echo "({$Goods->count(['big'=>$big['id'],'sh'=>1])})";
-                                echo "<a>";
-                        }
-                        ?>
                         <span>
                                 <div>進站總人數</div>
                                 <div style="color:#f00; font-size:28px;">
