@@ -60,7 +60,7 @@
                                 //使用迴圈列出所有大分類
                                 foreach ($bigs as $big) {
                                         echo "<div class='ww'>";
-                                        echo "<a herf='{$big['id']}'>";
+                                        echo "<a href='?type={$big['id']}'>";
                                         echo $big['name'];
                                         echo "({$Goods->count(['big' =>$big['id'], 'sh' => 1])})";
                                         echo "</a>";
@@ -69,7 +69,7 @@
                                                 $mids = $Type->all(['big_id' => $big['id']]);
                                                 foreach ($mids as $mid) {
                                                         echo "<div class='s'>";
-                                                        echo "<a herf='?type={$mid['id']}'>";
+                                                        echo "<a href='?type={$mid['id']}'>";
                                                         echo $mid['name'];
                                                         echo "({$Goods->count(['mid' =>$mid['id'], 'sh' => 1])})";
 
