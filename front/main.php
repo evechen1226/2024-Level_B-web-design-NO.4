@@ -13,10 +13,11 @@ if ($type != 0) {
   $goods = $Goods->all(['sh' => 1]);
   $nav = '全部商品';
 }
-
-foreach ($goods as $g) {
 ?>
   <h2><?= $nav; ?></h2>
+<?php
+foreach ($goods as $g) {
+?>
   <div class="all">
     <div class="pp cc">
       <img src="./img/<?= $g['img']; ?>" style="width: 150px;height:100px;" alt="">
